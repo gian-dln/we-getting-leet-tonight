@@ -1,20 +1,8 @@
-def maxProfit(prices: list[int]) -> int:
-    buy = 0
-    sell =  1
-    profit =  0
-
-    while sell < len(prices):
-        currentProfit = prices[sell] - prices[buy]
-        if currentProfit > 0:
-            profit = max(profit, currentProfit)
-        else:
-            buy = sell 
-
-        sell +=1
-
+def maxProfit(prices):
+    min_price = prices[0]
+    profit = 0
+    for p in prices:
+        min_price = min(min_price, p)
+        profit = max(profit, p - min_price)
     return profit
-        
 
-prices = [1,2]  
-
-print (maxProfit(prices))
