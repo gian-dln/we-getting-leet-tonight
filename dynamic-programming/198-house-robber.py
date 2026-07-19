@@ -1,4 +1,4 @@
-def rob(self, nums: List[int]) -> int:
+def rob(nums: list[int]) -> int:
     rob1, rob2 = 0, 0
     for n in nums:
         newRob = max(rob1 + n, rob2)
@@ -6,3 +6,6 @@ def rob(self, nums: List[int]) -> int:
         rob2 = newRob
 
     return rob2
+
+
+print(rob([1,2,3,1]))
