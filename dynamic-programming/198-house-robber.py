@@ -6,6 +6,3 @@ def rob(nums: list[int]) -> int:
         rob2 = newRob
 
     return rob2
-
-
-print(rob([1,2,3,1]))
