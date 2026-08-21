@@ -22,7 +22,7 @@ def bfs(grid ,visited, r, c):
     q.append((r,c))
 
     while q: # (is not empty)
-        row, col = q.popleft()
+        row, col = q.popleft() #q.pop() for iterative DFS
         directions = [[1,0], [-1,0], [0,1], [0,-1]] #
 
         for dr, dc in directions:
