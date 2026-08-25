@@ -5,13 +5,11 @@ def maxArea(height: list[int]) -> int:
     maxArea = 0
 
     while lo < hi:
-        loHeight = height[lo]
-        hiHeight = height[hi]
-        area = min(loHeight, hiHeight) * length
-        if loHeight < hiHeight:
+        area = min(height[lo], height[hi]) * length
+        if min(height[lo], height[hi]) == height[lo]:
             lo += 1
             length -= 1
-        else:
+        elif min(height[lo], height[hi]) == height[hi]:
             hi -= 1
             length -= 1
         maxArea = max(maxArea, area)
