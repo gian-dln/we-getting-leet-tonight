@@ -9,17 +9,17 @@ class TreeNode:
         self.left = left
         self.right = right
 
-# bfs solution
+# dfs solution
 class Solution:
     def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
         if not root:
             return None
-        visited = deque([root])
-        while visited:
-            node = visited.popleft()
+        stack = [root]
+        while stack:
+            node = stack.pop()
             node.left, node.right = node.right, node.left
             if node.left:
-                visited.append(node.left)
+                stack.append(node.left)
             if node.right:
-                visited.append(node.right)
+                stack.append(node.right)
         return root
