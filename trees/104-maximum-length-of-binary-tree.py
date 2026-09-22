@@ -9,20 +9,9 @@ class TreeNode:
         self.left = left
         self.right = right
 
-# bfs solution
+# dfs-recursive solution
 def maxDepth(self, root: Optional[TreeNode]) -> int:
-    depth = 0
-    q = deque()
-    if root:
-        q.append(root)
+    if not root:
+        return 0
 
-    while q:
-        for i in range(len(q)):
-            node = q.popleft()
-            if node.left:
-                q.append(node.left)
-            if node.right:
-                q.append(node.right)
-        depth +=1
-
-    return depth
+    return 1+max(self.maxDepth(root.left),self.maxDepth(root.right))
