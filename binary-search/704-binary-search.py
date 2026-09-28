@@ -1,4 +1,4 @@
-def search(self, nums: List[int], target: int) -> int:
+def search(self, nums: list[int], target: int) -> int:
     l,r = 0, len(nums)
 
     while l<r:
