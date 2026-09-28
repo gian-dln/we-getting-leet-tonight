@@ -1,23 +1,15 @@
 def lengthOfLongestSubstring(s: str) -> int:
-    # first solution: O(n^2)
-    if len(s)==1:
-        return 1
-    l,r = 0, 0
+    # optimized O(n)
+    l = 0
     res = 0
-    curr = 0
-    while l<=r and r<=len(s)-1:
-        if not s[r]:
-            return res
-        if (s[r] in s[l:r]):
-            res = max(curr, res)
-            curr = 0
-            l+=1
-            r = l
-            continue
-        r+=1
-        curr +=1
-            
-
+    chars = set()
     
-    return max(res,curr)
-
+    for r in range(len(s)):
+        while s[r] in chars:
+            chars.remove(s[l])
+            l+=1
+        
+        chars.add(s[r])
+        res = max(res, r-l+1) #r-l+1 = len(s[l:r])
+    
+    return res
