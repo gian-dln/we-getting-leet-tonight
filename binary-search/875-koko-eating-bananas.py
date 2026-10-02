@@ -1,7 +1,7 @@
 import math
 
 
-def minEatingSpeed(self, piles: list[int], h: int) -> int:
+def minEatingSpeed(piles: list[int], h: int) -> int:
     # i =  bananas per hour, n = bananas in pile
     l,r = 1, max(piles)
     res = max(piles)
