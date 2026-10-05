@@ -5,7 +5,7 @@ def uniquePaths(m: int, n: int) -> int:
 
     def paths(i, j):
         if (i,j) in memo:
-            return memo(i,j)
+            return memo[(i,j)]
         else:
             if i == j == 0:
                 return 1
